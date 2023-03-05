@@ -44,7 +44,7 @@ def sites(cli):
                 if payload.get('id') is None:
                     resp = cli.client.site.store(payload)
                 else:
-                    resp = cli.client.site.store(payload.get('id'), payload)
+                    resp = cli.client.site.update(payload.get('id'), payload)
             except Exception as e:
                 cli.write_to_manifest("WRITE_EXCEPTION", path, e)
                 continue
